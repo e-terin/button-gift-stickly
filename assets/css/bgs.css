@@ -1,15 +1,53 @@
+/*==gift button in the right bottom corner of the window==*/
 a.bgs-link-button>div {
-	color: #fff;
-	position: relative;
-	border-radius: 50%;
-	padding: 5px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
-	border: 3px solid;
 	position: fixed;
 	right: 20px;
-	bottom: 20px;
+	bottom: 50px;
 	height: 80px;
     width: 80px;
-	z-index: 100000000
+	z-index: 999;
+}
+
+/*==div price==*/
+a.bgs-link-button>div>div {
+	color:red;
+	margin:auto;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	position: relative;
+	top: 1rem;
+}
+
+#bgs-modal{
+	opacity: 0;
+	position: fixed;
+	visibility: hidden;
+	width: 400px;
+	box-sizing: border-box;
+	transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+  	z-index: 1000;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+#bgs-modal:target {
+	opacity: 1;
+	top: 12%;
+  	left: 50%;
+  	margin-left: -200px;
+	visibility: visible
+}
+
+#bgs-modal .overlay {
+	background-color: #000;
+	background: rgba(255,255,255,.8);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10
 }
