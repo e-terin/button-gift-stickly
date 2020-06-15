@@ -17,19 +17,24 @@ add_action( 'wp_enqueue_scripts', 'bgs_styles');
 add_action('wp_footer', 'bgs_footer');
 function bgs_footer() {
     ?>
-    <a href="#bgs-modal" class="bgs-link-button">
+    <a href="#openModal" class="bgs-link-button">
         <div>
             <div>5 000₽</div>
             <img src="<?=plugins_url('/assets/img/gift.png',__FILE__)?>">
         </div>
     </a>
-  <div id="bgs-modal">
-    <div class="bgs-header">
-      <a href="#" class="close-bgs-modal"><div class="bgs-footer-close"><span class="bgs-close">X</span></div></a></div>
+  <div id="openModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Название</h3>
+        <a href="#close" title="Close" class="close">×</a>
+      </div>
+      <div class="modal-body">    
+        <p>Содержимое модального окна...</p>
+      </div>
     </div>
-    <div class="bgs-modal-content"> 
-      123
-      <div class="bgs-overlay"></div>
-    </div>
+  </div>
+</div>
   <?php
 }
