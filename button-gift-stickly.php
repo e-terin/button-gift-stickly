@@ -7,6 +7,9 @@ Author: Evgeniy Terin
 Author URI: https://web.derin.ru
 */
 
+/*==Check direct request==*/
+defined( 'ABSPATH' ) or die( 'naXep' );
+
 /*==Add plugin styles==*/
 function bgs_styles() {
     wp_enqueue_style( 'bgs', plugins_url('/assets/css/bgs.css',__FILE__), array(), 1.0, 'screen' );
@@ -27,11 +30,12 @@ function bgs_footer() {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Название</h3>
+        <img src="<?=plugins_url('/assets/img/gift.png',__FILE__)?>">
+        <h3 class="modal-title">Купон на 5000 ₽ в подарок!</h3>
         <a href="#close" title="Close" class="close">×</a>
       </div>
       <div class="modal-body">    
-        <p>Содержимое модального окна...</p>
+        <p><?=do_shortcode('[contact-form-7 id="71" title="Контактная форма 1"]')?></p>
       </div>
     </div>
   </div>

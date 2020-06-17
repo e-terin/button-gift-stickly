@@ -5,8 +5,22 @@ a.bgs-link-button>div {
 	bottom: 50px;
 	height: 80px;
     width: 80px;
-	z-index: 999;
+    z-index: 999;
+    /*transform: scale(.85)*/;
+    animation: pulse 2s ease-in-out infinite;
 }
+
+@keyframes pulse {
+	from {
+      transform: scale(.85);
+	}
+	50% {
+      transform: scale(1.1);
+	}
+	to {
+      transform: scale(.85);
+	}
+  }
 
 /*==div price==*/
 a.bgs-link-button>div>div {
@@ -16,8 +30,21 @@ a.bgs-link-button>div>div {
 	font-size: 1.5rem;
 	font-weight: bold;
 	position: relative;
-	top: 1rem;
+    top: 1rem;
+    animation: price-rotation 3s ease-in-out infinite;
 }
+
+@keyframes price-rotation {
+	from {
+      transform: rotate(-5deg);
+	}
+	50% {
+      transform: rotate(5deg);
+	}
+	to {
+      transform: rotate(-5deg);
+	}
+  }
 
 /* свойства модального окна по умолчанию */
 .modal {
@@ -100,8 +127,11 @@ a.bgs-link-button>div>div {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 1.5;
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:red;
+    text-align: center;
+    flex-grow:1;
 }
 /* свойства для кнопки "Закрыть" */
 .close {
